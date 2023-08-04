@@ -94,3 +94,33 @@ mysql> SELECT * FROM STUDENTNAME;
 | SHIV   | LATUR   |
 +--------+---------+
 5 rows in set (0.00 sec)
+mysql> SELECT * FROM STUDENTMARKS;
++----+--------+------+-------+
+| ID | NAME   | AGE  | MARKS |
++----+--------+------+-------+
+|  1 | MONIKA |   21 |    90 |
+|  2 | SAKSHI |   19 |    50 |
+|  3 | YASH   |   21 |    80 |
+|  4 | BUSHRA |   21 |    95 |
+|  5 | SHIV   |   19 |    85 |
+|  6 | VIVEK  |   21 |    70 |
++----+--------+------+-------+
+6 rows in set (0.00 sec)
+
+mysql> CREATE VIEW MARKSVIEW AS
+    -> SELECT STUDENTDETAIL.STUD_ID,STUDENTDETAIL.NAME,STUDENTMARKS.MARKS
+    -> FROM STUDENTDETAIL,STUDENTMARKS
+    -> WHERE STUDENTDETAIL.NAME=STUDENTMARKS.NAME;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT * FROM MARKSVIEW;
++---------+--------+-------+
+| STUD_ID | NAME   | MARKS |
++---------+--------+-------+
+|       1 | MONIKA |    90 |
+|       2 | SAKSHI |    50 |
+|       3 | YASH   |    80 |
+|       5 | SHIV   |    85 |
++---------+--------+-------+
+4 rows in set (0.00 sec)
+
