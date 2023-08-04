@@ -27,3 +27,15 @@ mysql> CREATE VIEW STUDENT AS
     -> FROM STUDENTMARKS
     -> ;
 Query OK, 0 rows affected (0.03 sec)
+mysql> SELECT * FROM STUDENT;
++---------+-------+
+| NAME    | MARKS |
++---------+-------+
+| MONIKA  |    90 |
+| SAKSHI  |    50 |
+| YASH    |    80 |
+| SHIV    |    85 |
+| VIVEK   |    70 |
+| DARSHAN |    78 |
++---------+-------+
+6 rows in set (0.00 sec)
